@@ -1,0 +1,12 @@
+    #!/bin/bash  
+      
+    VAR=`wget --spider $1 2>&1`  
+    CHECK=`echo $VAR | grep '200 OK'`  
+      
+    if [ "$CHECK" != "" ]; then  
+     echo "Api is Working "  
+     exit 0   
+    else  
+     echo "Api is not Working"  
+     exit 2   
+    fi  
